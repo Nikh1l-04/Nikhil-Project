@@ -30,9 +30,9 @@ public:
 
 };
 int main(){
-    Node* head = new Node(30);
-    Node* second = new Node(20);
-    Node* third = new Node(10);
+    Node* head = new Node(1);
+    Node* second = new Node(2);
+    Node* third = new Node(3);
     
     head->next = second;
     second->next = third;
