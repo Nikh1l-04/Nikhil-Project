@@ -1,6 +1,5 @@
 #include<iostream>
 #include<stack>
-#include<algorithm>
 using namespace std;
 string Decode(string s){
     stack<int> num;
@@ -24,14 +23,13 @@ string Decode(string s){
                 
             }
 
-            res = rep + pre;
+            res = pre + rep;
         }else if(isdigit(ch)){
             n = n*10 + (ch - '0');
         }else{
             res += ch;
         }
     }
-    reverse(res.begin(),res.end());
     return res;
 }
 int main(){
