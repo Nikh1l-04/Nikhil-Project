@@ -2,14 +2,17 @@
 #include<stack>
 using namespace std;
 int BasicCalc(string s){
-    stack<char> num;
-    stack<char> sign;
+    stack<int> num;
+    stack<int> sign;
     int res = 0;
     int sig = 1;
     int currNum = 0;
     for(char ch  : s){
         if(isdigit(ch)){
             currNum = currNum * 10 + (ch - '0');
+        }
+        if(ch == ' ') { 
+            continue;
         }
         if(ch == '+'){
             res += sig * currNum;
@@ -21,10 +24,12 @@ int BasicCalc(string s){
             currNum = 0;
         }
         if(ch == '('){
+            res += sig * currNum;
             num.push(res);
             res = 0;
             sign.push(sig);
             sig = 1;
+            currNum = 0;
         }else if(ch == ')'){
             res += sig * currNum;
             currNum = 0;
