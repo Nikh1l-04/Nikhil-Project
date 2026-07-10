@@ -3,14 +3,14 @@
 #include<stack>
 using namespace std;
 bool Validate(vector<int>& pushed, vector<int>& popped) {
-        if (pushed.size() != popped.size()) {
-            return false;
-        }
+    if (pushed.size() != popped.size()) {
+        return false;
+    }
 
-        int stTop = -1; 
-        int j = 0;     
+    int stTop = -1; 
+    int j = 0;     
 
-        for (int i = 0; i < pushed.size(); i++) {
+    for (int i = 0; i < pushed.size(); i++) {
         stTop++;
         
 
