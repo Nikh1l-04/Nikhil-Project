@@ -12,7 +12,7 @@ bool Validate(vector<int>& pushed, vector<int>& popped) {
 
     for (int i = 0; i < pushed.size(); i++) {
         stTop++;
-        
+        pushed[stTop] = pushed[i];
 
         while (stTop >= 0 && pushed[stTop] == popped[j]) {
             stTop--; 
