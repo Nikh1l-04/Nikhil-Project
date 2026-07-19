@@ -58,6 +58,25 @@ void postOrder(Node* root){
     postOrder(root -> right);
     cout<<root -> data<<" ";
 }
+//Level Order Traversal
+void BFS(Node* root){
+    if(root == nullptr) return; 
+    
+    queue<Node*> Q;
+    Q.push(root);
+    while(!Q.empty()){
+        Node* curr = Q.front();
+        Q.pop();
+        cout << curr -> data << " ";
+        if(curr -> left != nullptr){
+            Q.push(curr -> left);
+        }
+        if(curr -> right != nullptr){
+            Q.push(curr -> right);
+        }
+    }
+    cout << endl;
+}
 int main(){
     vector<int> nums = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
     Node* root = buildTree(nums);
@@ -69,6 +88,9 @@ int main(){
     cout<<endl;
     cout<<"PostOrder Traversal : ";
     postOrder(root);
+    cout<<endl;
+    cout<<"Level Order Traversal : ";
+    BFS(root);
     cout<<endl;
     return 0;
 }
